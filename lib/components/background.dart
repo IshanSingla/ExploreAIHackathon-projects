@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:particles_flutter/particles_flutter.dart';
 
+// ignore: must_be_immutable
 class BackgroundChager extends StatelessWidget {
   dynamic widget;
   Color particleColor, randColorList;
   BackgroundChager(
-      {super.key, required this.widget, required this.particleColor, required this.randColorList});
+      {super.key,
+      required this.widget,
+      required this.particleColor,
+      required this.randColorList});
 
   @override
   Widget build(BuildContext context) {

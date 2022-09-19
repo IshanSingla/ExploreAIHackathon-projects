@@ -41,12 +41,12 @@ class Login extends State<LoginPage> {
                       fontSize: 30,
                       backgroundColor: Colors.lightGreen),
                 ),
-                
+
                 Center(
-                    child: SignInButton(Buttons.Google,
-                    text: "SignIn with Google",
-                    onPressed: () => signInWithGoogle()),
-                    ),
+                  child: SignInButton(Buttons.Google,
+                      text: "SignIn with Google",
+                      onPressed: () => signInWithGoogle()),
+                ),
                 //     ClipOval(
                 //         child: ElevatedButton(
                 //             // ignore: sort_child_properties_last
