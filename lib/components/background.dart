@@ -1,48 +1,39 @@
-
 import 'package:flutter/material.dart';
 import 'package:particles_flutter/particles_flutter.dart';
 
-class BackgroundChnger extends StatelessWidget {
+class BackgroundChager extends StatelessWidget {
   dynamic widget;
-  BackgroundChnger({super.key, this.widget});
+  Color particleColor, randColorList;
+  BackgroundChager(
+      {super.key, required this.widget, required this.particleColor, required this.randColorList});
 
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
-    dynamic dataNew = Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.asset("assets/images/logo.png", width: 350, height: 300),
-          const CircularProgressIndicator(
-            valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-          ),
-        ]);
+
     return Center(
         child: Stack(
       children: [
         CircularParticle(
           key: UniqueKey(),
-          awayRadius: 5,
-          numberOfParticles: 250,
+          awayRadius: 9,
+          numberOfParticles: 30,
           speedOfParticles: 1,
           height: screenHeight,
           width: screenWidth,
           onTapAnimation: true,
-          particleColor: Color.fromARGB(255, 137, 103, 45).withAlpha(150),
+          particleColor: particleColor,
           awayAnimationDuration: const Duration(milliseconds: 600),
-          maxParticleSize: 7,
+          maxParticleSize: 5,
           isRandSize: true,
           isRandomColor: true,
-          randColorList: const [Color.fromARGB(255, 49, 127, 0)],
+          randColorList: [randColorList],
           awayAnimationCurve: Curves.easeInOutBack,
           enableHover: false,
-          connectDots: true, //not recommended
+          connectDots: true,
         ),
         widget
-        
-        
       ],
     ));
   }

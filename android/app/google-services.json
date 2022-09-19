@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "383169544290",
+    "project_id": "explore-ai-hackathon",
+    "storage_bucket": "explore-ai-hackathon.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:383169544290:android:ee09978a01a09a9ad7113b",
+        "android_client_info": {
+          "package_name": "com.example.io"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "383169544290-8m8mn0hgqjad5rkgi4q1kdtqs6sgrh01.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGhE5KoK2dMER4xG04dclAaAaRXBneLP0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "383169544290-8m8mn0hgqjad5rkgi4q1kdtqs6sgrh01.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

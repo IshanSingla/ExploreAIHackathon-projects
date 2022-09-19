@@ -38,7 +38,12 @@ dependencies:
   cupertino_icons: ^1.0.2
   particles_flutter: ^0.1.4
   image_picker: ^0.8.5+3
-
+  flutter_signin_button: ^2.0.0
+  firebase_auth: ^3.9.0
+  firebase_core: ^1.22.0
+  google_sign_in: ^5.4.1
+  animated_text_kit: ^4.2.2
+  lottie: ^1.4.3
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -64,6 +69,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/logo.png
+    - assets/images/splash.json
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

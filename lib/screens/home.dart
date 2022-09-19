@@ -1,5 +1,8 @@
+// import 'dart:convert';
+
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
+// import 'package:image_picker/image_picker.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 import '../components/background.dart';
 
@@ -11,28 +14,32 @@ class MainPage extends StatefulWidget {
 }
 
 class Home extends State<MainPage> {
+  // data declaration
   int _selectedIndex = 1;
   List<Widget> screenParts = const [
-    Text('Index 0: Home',
+    Text('Database',
         style: TextStyle(
-          color: Colors.white,
-        )),
-    Text('Index 1: Business',
+            color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold)),
+    Text('Tree Classifier',
         style: TextStyle(
-          color: Colors.white,
-        )),
-    Text('Index 2: School',
+            color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold)),
+    Text('Tree Detector',
         style: TextStyle(
-          color: Colors.white,
-        )),
+            color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold)),
   ];
-
-  dynamic _image() async {
-    final XFile? pickedFile =
-        await ImagePicker().pickImage(source: ImageSource.camera);
-    if (pickedFile == null) return null;
-    return pickedFile;
+  Home() {
+    FirebaseAuth.instance.authStateChanges().listen((User? user) {
+      if (user == null) {
+        Navigator.pushReplacementNamed(context, '/login');
+      }
+    });
   }
+  // dynamic _image() async {
+  //   final XFile? pickedFile =
+  //       await ImagePicker().pickImage(source: ImageSource.camera);
+  //   if (pickedFile == null) return null;
+  //   return pickedFile;
+  // }
 
   // ignore: non_constant_identifier_names
   BottomNavigationBar BotomBar() {
@@ -52,9 +59,9 @@ class Home extends State<MainPage> {
         ),
       ],
       currentIndex: _selectedIndex,
-      backgroundColor: const Color.fromARGB(255, 0, 0, 0),
-      selectedItemColor: const Color.fromARGB(255, 119, 255, 0),
-      unselectedItemColor: const Color.fromARGB(255, 49, 127, 0),
+      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+      selectedItemColor: const Color.fromARGB(255, 37, 135, 37),
+      unselectedItemColor: const Color.fromARGB(255, 0, 0, 0),
       onTap: (int index) {
         setState(() {
           _selectedIndex = index;
@@ -67,17 +74,18 @@ class Home extends State<MainPage> {
   Widget build(BuildContext context) {
     final myFruit = screenParts[_selectedIndex];
     return Scaffold(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.white,
         appBar: AppBar(
           centerTitle: true,
-          title: const Text(
-            "CodaHolic",
-            style:
-                TextStyle(color: Color.fromARGB(255, 49, 127, 0), fontSize: 30),
-          ),
-          backgroundColor: Colors.black,
+          title: myFruit,
+          backgroundColor: Colors.white,
+          toolbarHeight: 60,
         ),
-        body: BackgroundChnger(widget: Center(child: myFruit)),
+        body: BackgroundChager(
+            particleColor:
+                const Color.fromARGB(255, 128, 128, 128).withAlpha(150),
+            randColorList: const Color.fromARGB(255, 105, 105, 105),
+            widget: Center(child: myFruit)),
         bottomNavigationBar: BotomBar());
   }
 }
