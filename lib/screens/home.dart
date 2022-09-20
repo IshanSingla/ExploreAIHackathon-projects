@@ -17,9 +17,9 @@ class MainPage extends StatefulWidget {
 class Home extends State<MainPage> {
   // data declaration
   int _selectedIndex = 0;
-  List<Widget> screenParts = const [
+  List<Widget> screenParts = [
     CameraCapture(),
-    Text('Tree Detector',
+    const Text('Tree Detector',
         style: TextStyle(
             color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold)),
   ];
@@ -33,9 +33,9 @@ class Home extends State<MainPage> {
   ];
   Home() {
     FirebaseAuth.instance.authStateChanges().listen((User? user) {
-      if (user == null) {
-        Navigator.pushReplacementNamed(context, '/login');
-      }
+      // if (user == null) {
+      //   Navigator.pushReplacementNamed(context, '/login');
+      // }
     });
   }
 
