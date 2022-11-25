@@ -4,7 +4,6 @@ RUN apt-get update && apt-get install -y \
     python3-pip \
     python3-setuptools 
 RUN apt-get install -y python-all-dev
-RUN apt-get install -y wget
 RUN apt install -y python-opencv
 
 COPY . /app
