@@ -1,0 +1,11 @@
+version: "3"
+services:
+  flaskai:
+    restart: always
+    build:
+      context: ./
+      dockerfile: dockerfile
+    container_name: flaskai
+    image: flaskai
+    ports:
+      - "3000:8080"
